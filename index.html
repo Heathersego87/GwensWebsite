@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Gwendolyn Durees Art Shop</title>
+  <meta name="description" content="Original art, prints, and commissions by Your Name." />
+
+  <!-- Open Graph (Facebook, LinkedIn, etc.) -->
+  <meta property="og:title" content="Your Name Art Shop" />
+  <meta property="og:description" content="Shop originals and high quality prints. Limited drops and commissions available." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://heathersego87.github.io/GwensWebsite/" />
+  <meta property="og:image" content="images/og-image.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="brand">
+      <a href="#" class="logo">Gwendolyn Duree</a>
+      <span class="tagline">Original art, prints, and commissions</span>
+    </div>
+
+    <nav class="nav">
+      <a href="#shop">Shop</a>
+      <a href="#about">About</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+      <button class="cartBtn" id="cartBtn" aria-label="Open cart">
+        Cart <span class="pill" id="cartCount">0</span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="heroText">
+        <h1>Art that makes your space feel alive.</h1>
+        <p>Shop originals and high quality prints. Limited drops, fast shipping, and commissions available.</p>
+        <div class="heroActions">
+          <a class="btn primary" href="#shop">Shop the gallery</a>
+          <a class="btn" href="#contact">Commission request</a>
+        </div>
+      </div>
+      <div class="heroCard">
+        <div class="heroImage" aria-label="Featured artwork image placeholder"></div>
+        <div class="heroMeta">
+          <div>
+            <div class="miniTitle">Featured piece</div>
+            <div class="miniText">Swap this with your best seller</div>
+          </div>
+          <a class="btn small" href="#shop">View pieces</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="shop" class="section">
+      <div class="sectionHeader">
+        <h2>Shop</h2>
+        <div class="filters">
+          <input id="search" type="search" placeholder="Search artwork…" />
+          <select id="category">
+            <option value="all">All</option>
+            <option value="original">Originals</option>
+            <option value="print">Prints</option>
+            <option value="commission">Commissions</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="grid" id="productGrid"></div>
+    </section>
+
+    <section id="about" class="section twoCol">
+      <div>
+        <h2>About</h2>
+        <p>
+          Hi, I’m <strong>Your Name</strong>. I create art inspired by ______.
+          Every piece is made with ______ and shipped with care.
+        </p>
+        <ul class="bullets">
+          <li>Made in: Your City, State</li>
+          <li>Medium: Acrylic, digital, ink, etc</li>
+          <li>Turnaround: 1–3 business days for prints (edit this)</li>
+        </ul>
+      </div>
+      <div class="aboutCard">
+        <div class="aboutPhoto" aria-label="Your photo placeholder"></div>
+        <div class="aboutNote">Add a photo of you or your studio. People buy from people.</div>
+      </div>
+    </section>
+
+    <section id="faq" class="section">
+      <h2>FAQ</h2>
+      <details>
+        <summary>How long does shipping take?</summary>
+        <p>Typical processing is 1–3 business days. Shipping time depends on your carrier and location.</p>
+      </details>
+      <details>
+        <summary>Do you accept returns?</summary>
+        <p>Prints are returnable within 14 days if unused and in original packaging. Originals are final sale (edit this).</p>
+      </details>
+      <details>
+        <summary>Do you do commissions?</summary>
+        <p>Yes. Use the commission request form below and I’ll reply with pricing and timeline.</p>
+      </details>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Contact / Commissions</h2>
+      <form class="form" id="contactForm">
+        <div class="row">
+          <label>
+            Name
+            <input required name="name" />
+          </label>
+          <label>
+            Email
+            <input required type="email" name="email" />
+          </label>
+        </div>
+        <label>
+          What are you looking for?
+          <select name="type">
+            <option>General question</option>
+            <option>Commission request</option>
+            <option>Order issue</option>
+          </select>
+        </label>
+        <label>
+          Message
+          <textarea required name="message" rows="5"></textarea>
+        </label>
+        <button class="btn primary" type="submit">Send</button>
+        <p class="formNote" id="formNote" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <aside class="cart" id="cart" aria-hidden="true">
+    <div class="cartHeader">
+      <h3>Your cart</h3>
+      <button class="iconBtn" id="closeCart" aria-label="Close cart">✕</button>
+    </div>
+    <div class="cartItems" id="cartItems"></div>
+    <div class="cartFooter">
+      <div class="totalRow">
+        <span>Total</span>
+        <strong id="cartTotal">$0.00</strong>
+      </div>
+      <button class="btn primary" id="checkoutBtn">Checkout (placeholder)</button>
+      <div class="tiny">Checkout will be connected to Stripe/Shopify next.</div>
+    </div>
+  </aside>
+
+  <div class="overlay" id="overlay" hidden></div>
+
+  <footer class="footer">
+    <div>© <span id="year"></span> Your Name. All rights reserved.</div>
+    <div class="footerLinks">
+      <a href="#contact">Contact</a>
+      <a href="#faq">Policies</a>
+      <a href="#">Instagram</a>
+    </div>
+  </footer>
+
+  <script src="scripts/app.js"></script>
+</body>
+</html>
